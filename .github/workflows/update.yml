@@ -1,0 +1,34 @@
+name: Update archive
+
+on:
+  schedule:
+    - cron: '30 22 * * 3,6'  # Wed & Sat 22:30 UTC (~23:30 Lisbon)
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest draw
+        id: fetch
+        run: |
+          node .github/scripts/update-archive.mjs
+          echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Commit if new draw
+        if: steps.fetch.outputs.changed != '0'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add totoloto.jsonl
+          git commit -m "chore: add draw $(node -e "const f=require('fs');const lines=f.readFileSync('totoloto.jsonl','utf8').trim().split('\n');console.log(JSON.parse(lines[lines.length-1]).draw)")"
+          git push
