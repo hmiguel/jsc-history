@@ -6,8 +6,6 @@ A machine-readable archive of Portuguese lottery draw results from [Jogos Santa 
 
 ### Totoloto — `totoloto.jsonl`
 
-**Coverage:** draws 012/2011 through 044/2026 (1 589 draws)
-
 **Format:**
 
 ```json
