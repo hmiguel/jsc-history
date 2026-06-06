@@ -20,7 +20,7 @@ A machine-readable archive of Portuguese lottery draw results from [Jogos Santa 
 | `numbers` | number[] | Five main numbers, sorted ascending (1–49) |
 | `lucky` | number | Lucky number (1–9) |
 
-Updated automatically at **22:30 UTC on Wednesdays and Saturdays**.
+Updated automatically at **01:00 UTC on Thursdays and Sundays**.
 
 ## TODO
 
