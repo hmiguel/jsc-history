@@ -22,11 +22,28 @@ A machine-readable archive of Portuguese lottery draw results from [Jogos Santa 
 
 Updated automatically at **01:00 UTC on Thursdays and Sundays**.
 
+### Euromilhões — `euromillions.jsonl`
+
+**Format:**
+
+```json
+{"id": "14855", "draw": "045/2026", "date": "2026-06-05", "numbers": [5, 6, 16, 17, 49], "stars": [2, 12]}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | string | Sequential draw ID from Jogos Santa Casa |
+| `draw` | string | Official draw reference (`NNN/YYYY`) |
+| `date` | string | Draw date in ISO 8601 format (`YYYY-MM-DD`) |
+| `numbers` | number[] | Five main numbers, sorted ascending (1–50) |
+| `stars` | number[] | Two lucky stars, sorted ascending (1–12) |
+
+Updated automatically at **01:00 UTC on Wednesdays and Saturdays**.
+
 ## TODO
 
 Games to add:
 
-- [ ] Euromilhões
 - [ ] Eurodreams
 - [ ] Totobola
 - [ ] Totoloto (draws before 2011)
