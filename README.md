@@ -20,7 +20,7 @@ A machine-readable archive of Portuguese lottery draw results from [Jogos Santa 
 | `numbers` | number[] | Five main numbers, sorted ascending (1–49) |
 | `lucky` | number | Lucky number (1–9) |
 
-Updated automatically at **01:00 UTC on Thursdays and Sundays**.
+Updated automatically at **05:00 UTC on Thursdays and Sundays**.
 
 ### Euromilhões — `euromillions.jsonl`
 
@@ -38,13 +38,29 @@ Updated automatically at **01:00 UTC on Thursdays and Sundays**.
 | `numbers` | number[] | Five main numbers, sorted ascending (1–50) |
 | `stars` | number[] | Two lucky stars, sorted ascending (1–12) |
 
-Updated automatically at **01:00 UTC on Wednesdays and Saturdays**.
+Updated automatically at **05:00 UTC on Wednesdays and Saturdays**.
+
+### EuroDreams — `eurodreams.jsonl`
+
+**Format:**
+
+```json
+{"draw": "045/2026", "date": "2026-06-04", "numbers": [1, 9, 17, 22, 37, 39], "dream": "3"}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `draw` | string | Official draw reference (`NNN/YYYY`) |
+| `date` | string | Draw date in ISO 8601 format (`YYYY-MM-DD`) |
+| `numbers` | number[] | Six main numbers, sorted ascending (1–40) |
+| `dream` | string | Dream number (1–5) |
+
+Updated automatically at **05:00 UTC on Tuesdays and Fridays**.
 
 ## TODO
 
 Games to add:
 
-- [ ] Eurodreams
 - [ ] Totobola
 - [ ] Totoloto (draws before 2011)
 
